@@ -1,0 +1,9 @@
+<div class="main-container">
+    <div class="cards">
+        <app-card class="card"
+        [logement]="logement"
+        *ngFor="let logement of accommodations$ | async"
+        >
+        </app-card>
+    </div>
+</div>
