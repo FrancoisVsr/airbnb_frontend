@@ -1,0 +1,50 @@
+.header{
+    position: fixed;
+    width: 100%;
+    height: 60px; //taille de mon header
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.01rem solid lightgray;
+
+    
+    .left{
+        height: 100%;
+        display: flex;
+        width: 33%;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 1rem;
+        left: 10;
+        margin-left: 15px;
+        img{height: 43%;}
+        color: black;
+    }
+
+    .center{
+        height: 100%;
+        width: 33%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 1rem;
+        left: 10;
+        margin-left: 15px;
+        img{height: 43%;}
+        color: black;
+    }
+
+    .right{
+        height: 100%;
+        width: 33%;
+        font-family: "Circular";
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 1rem;
+        left: 10;
+        margin-left: 15px;
+        img{height: 25%;}
+        color: black;
+    }
+}
