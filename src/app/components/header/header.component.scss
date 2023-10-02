@@ -1,50 +1,203 @@
 .header{
     position: fixed;
     width: 100%;
-    height: 60px; //taille de mon header
+    height: 12%; //taille de mon header
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 0.01rem solid lightgray;
 
     
-    .left{
-        height: 100%;
-        display: flex;
-        width: 33%;
-        align-items: center;
-        justify-content: space-evenly;
-        gap: 1rem;
-        left: 10;
-        margin-left: 15px;
-        img{height: 43%;}
-        color: black;
-    }
+  .left {
+    height: 100%;
+    display: flex;
+    width: 33%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    // flex: 1;
+    //background-color: blue; 
+  }
+  
+  .left button {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none; /* Pas de fond */
+    height: 100%;
+    margin: 9%;
+  }
+  
+  .left button img {
+    height: 40%;
+    margin: 10%;
+  }
 
-    .center{
-        height: 100%;
-        width: 33%;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        gap: 1rem;
-        left: 10;
-        margin-left: 15px;
-        img{height: 43%;}
-        color: black;
-    }
 
-    .right{
-        height: 100%;
-        width: 33%;
-        font-family: "Circular";
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        gap: 1rem;
-        left: 10;
-        margin-left: 15px;
-        img{height: 25%;}
-        color: black;
+  // *************************************************//
+  .search-box {
+    display: flex;
+    width: 33%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    // padding: 10px;
+    //background-color: red;
+  }
+  
+  .search-box input {
+    width: 25%;
+    font-family:'Circular', sans-serif, monospace;
+    font-size: 11px;
+    // flex: 1;
+    //padding: 5px;
+    margin: 10px;
+    border: none;
+    // border-radius: 20px;
+    border-right: 1px solid #ccc;
+    color: black;
+  }
+
+  .search-box input::placeholder {
+    color: black; 
+  }
+  
+  .search-box input:last-child {
+    border-right: none; 
+  }
+
+  .search-box input:last-child::placeholder {
+    color: lightgray; 
+  }
+
+  .last-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .last-input input {
+    //flex: 1;
+    width: 100%;
+    //padding: 5px;
+    margin: 5px;
+    border: none;
+    //border-radius: 20px;
+  }
+  
+  .last-input input:last-child {
+    border-right: none; /* Supprimez la bordure à droite pour le dernier input */
+  }
+  
+  .last-input button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    img{
+      height: 10%;
     }
-}
+  }
+
+
+  // *************************************************//  
+  // .right {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   width: 33% ;
+  // }
+
+  // .right .button button {
+  //   border: none;
+  //   padding: 0;
+  //   flex: 1;
+  //   background: none;
+  //   cursor: pointer;
+  //   margin: 5px; /* Ajustez selon l'espacement souhaité entre les boutons */
+  //   width: 100%;
+  //   background-color: red;
+  // }
+
+  // .text_button {
+  //   /* Styles pour le premier bouton avec du texte */
+  //   background-color: transparent;
+  //   color: black; /* Couleur du texte */
+  //   font-size: 12px; /* Taille de la police */
+  //   width: auto;
+  // }
+
+  // .language_button img {
+  //   /* Ajustez la taille de l'image selon vos besoins */
+  //   height: 4%;
+  //   width: 4%;
+  //   vertical-align: middle;
+  // }
+
+  // .profil_button {
+  //   display: flex;
+  //   align-items: center;
+  //   border: 1px solid #ccc;
+  //   border-radius: 20px;
+  //   width: auto;
+  // }
+
+  // .profil_button img {
+  //   /* Ajustez la taille des images et l'espacement entre elles selon vos besoins */
+  //   width: 5%;
+  //   height: 5%;
+  //   margin-right: 5px; /* Espacement entre les deux images */
+  //   vertical-align: middle;
+  // }
+
+
+
+  .right{
+    display: flex;
+    width: 33%;
+    justify-content: center;
+    align-items: center;
+    //background-color: red;
+  }
+
+  .right .button button{
+    //flex-direction: row;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background: none;
+    cursor: pointer;
+    margin: 5px; /* Ajustez selon l'espacement souhaité entre les boutons */
+  }
+
+  .text_button {
+    /* Styles pour le premier bouton avec du texte */
+    background-color: transparent;
+    color: black; /* Couleur du texte */
+    font-size: 12px; /* Taille de la police */
+    font-weight: 550;
+  }
+
+  .language_button{
+  /* Ajustez la taille de l'image selon vos besoins */
+    img {
+      height: 4%;
+      width: 4%;
+    }
+    flex-direction: row;
+  }
+
+    .profil_button {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: auto;
+    flex-direction: row;
+  }
+
+
+} //header
