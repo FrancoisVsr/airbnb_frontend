@@ -5,24 +5,35 @@
     <div class="footer">
         <div class="general">
             <div class="laws">
-                <p>© 2023 Airbnb, Inc. · Confidentialité · Conditions générales · Plan du site · Fonctionnement du site · Infos sur l'entreprise</p>
+                <p>© 2023 Airbnb, Inc. · 
+                    <button>Confidentialité</button>
+                     ·
+                    <button>Conditions générales</button>
+                    ·
+                    <button>Plan du site</button>
+                    ·
+                    <button>Fonctionnement du site</button>
+                    ·
+                    <button>Infos sur l'entreprise</button>
+                </p>
             </div>
             <div class="others">
                 <div class="language">
-                    <!-- <img src="../../../assets/img/globe-footer.svg" alt=""> -->
-                    <button (click)="onButtonClick('Language')" class="buttonOnLanguage">
+                    <button (click)="onButtonClick('language')" class="buttonOnLanguage">
+                        <img class="globe-footer" src="../../../assets/img/globe-footer.svg" alt="">
                         Français (FR)
                     </button>
                 </div>
                 <div class="devises">
-                    <img src="" alt="">
-                    <button (click)="onButtonClick('Language')" class="buttonOnLanguage">
+                    <button (click)="onButtonClick('devise')" class="buttonOnDevise">
                         € EUR
                     </button>    
                 </div>
                 <div class="help">
-                    <button class="assist">Assistance et ressources</button>
-                    <img class="fleche-haut" src="../../../assets/img/arrow-bas.svg" alt="">
+                    <button (click)="onButtonClick('help')" class="assist">
+                        Assistance et ressources
+                        <img class="fleche-haut" src="../../../assets/img/arrow-bas.svg" alt="">
+                    </button>
                 </div>
             </div>
         </div>

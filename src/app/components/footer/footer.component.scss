@@ -30,6 +30,22 @@
                     font-size: 14px;
                     color: grey;
                 }
+
+                button {
+                    border: 0px;
+                    margin: 0;
+                    padding: 0;
+                    background-color: white;
+                    font-family: 'Roboto';
+                    font-size: 14px;
+                    color: grey;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+
+                button:hover {
+                    text-decoration: underline;
+                }
             }
         }
         
@@ -38,6 +54,22 @@
             display: flex;
             align-items: center;
             flex-direction: row;
+
+            .language {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                .globe-footer {
+                    margin-right: 2px;
+                    width: 15px;
+                    height: auto;
+                    vertical-align: middle;
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
             .help {
                 display: flex;
                 align-items: center;
@@ -47,17 +79,27 @@
                     width: 15px;
                     height: auto;
                     transform: rotate(180deg);
+                    vertical-align: middle;
+                }                
+                &:hover {
+                    text-decoration: underline;
                 }
             }
-        }
-    
-        button {
-            border: 0px;
-            background-color: white;
-            font-family: 'Roboto';
-            font-size: 14px;
-            color: rgb(15, 15, 15);
-            cursor: pointer;
+
+            .devises button:hover {
+                text-decoration: underline;
+            }
+
+            button {
+                border: 0px;
+                background-color: white;
+                font-family: 'Roboto';
+                font-size: 14px;
+                font-weight: 600;
+                color: rgb(15, 15, 15);
+                cursor: pointer;
+                text-decoration: none;
+            }
         }
     }
     
@@ -81,12 +123,17 @@
             font-size: 15px;
             font-weight: 600px;
             cursor: pointer;
+            transition: transform 0.2s;
 
             img {
                 margin-left: 7px;
                 width: 10%;
                 height: auto;
                 filter: invert(100%);
+            }
+
+            &:hover {
+                transform: scale(1.05);
             }
         }
     }
