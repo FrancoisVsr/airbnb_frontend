@@ -1,19 +1,30 @@
-<div class="footer">
-    <div class="laws">
-
+<div class="foot">
+    <div class="switch-map">
+        <button>Afficher la carte <img src="../../../assets/img/maps.svg" alt=""></button>
     </div>
-    <div class="others">
-        <div class="language">
-            <img src="../../../assets/img/globe_footer.svg" alt="">
-            <button (click)="onButtonClick('Language')" class="buttonOnLanguage">
-                Français (FR)
-            </button>
-        </div>
-        <div>
-            <img src="" alt="">
-            <button (click)="onButtonClick('Language')" class="buttonOnLanguage">
-                EUR
-            </button>    
+    <div class="footer">
+        <div class="general">
+            <div class="laws">
+                <p>© 2023 Airbnb, Inc. · Confidentialité · Conditions générales · Plan du site · Fonctionnement du site · Infos sur l'entreprise</p>
+            </div>
+            <div class="others">
+                <div class="language">
+                    <!-- <img src="../../../assets/img/globe-footer.svg" alt=""> -->
+                    <button (click)="onButtonClick('Language')" class="buttonOnLanguage">
+                        Français (FR)
+                    </button>
+                </div>
+                <div class="devises">
+                    <img src="" alt="">
+                    <button (click)="onButtonClick('Language')" class="buttonOnLanguage">
+                        € EUR
+                    </button>    
+                </div>
+                <div class="help">
+                    <button class="assist">Assistance et ressources</button>
+                    <img class="fleche-haut" src="../../../assets/img/arrow-bas.svg" alt="">
+                </div>
+            </div>
         </div>
     </div>
 </div>

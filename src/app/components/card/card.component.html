@@ -5,7 +5,7 @@
         <svg class="favourite" xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 32 32" aria-hidden="true" 
             role="presentation" focusable="false" 
-            style="display: block; height: 30px; width: 30px; stroke-width: 2; overflow: visible; opacity: 1;"
+            style="display: block; height: 25px; width: 25px; stroke-width: 2; overflow: visible; opacity: 1;"
             >
             <path [attr.stroke-opacity]=" logement.favourite ? 
             '1' : '1'" [attr.fill-opacity]="logement.favourite ? 
@@ -19,11 +19,15 @@
     <div class="infos">
         <div class="about">
             <p class="city">{{ logement.city_name }}, France</p>
-            <p class="price">{{ logement.price }} € par nuit</p>
+            <p class="vendeur">Particulier</p>
+            <p class="dates">1-6 oct.</p>
+            <p class="price">
+                <span class="price-value"> {{ logement.price }} €</span> par nuit
+            </p>
         </div>
         <div class="rating">
             <img src="../../../assets/img/etoile-rating.svg" alt="">
-            <p>{{ logement.rating }}</p>
+            <span>{{ logement.rating }}</span>
         </div>
     </div>
 </div>

@@ -4,7 +4,6 @@
     max-width: 270px;
     display: flex;
     flex-direction: column;
-    margin: 20px 15px;
     border-radius: 10px;
 
     .image {
@@ -33,25 +32,47 @@
 
     .infos {
         flex: 1;
-        padding: 10px;
-        box-sizing: border-box;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 0 0 10px 10px;
         display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+        margin-bottom: 20px;
 
         .about {
             flex: 1;
             p {
                 margin: 0;
+                line-height: 1.4;
+            }
+
+            .city {
                 color: black;
+                font-weight:600;
+            }
+
+            .price-value {
+                font-weight: 600;
+            }
+
+            .vendeur {
+                color: grey;
+            }
+
+            .dates {
+                color: grey;
             }
         }
 
         .rating {
+            flex: 1;
             display: flex;
-            align-items: center;
             flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-end;
+            
             img {
+                width: 15px;
+                height: auto;
+                margin-right: 5px;
             }
         }
     }
