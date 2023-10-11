@@ -8,6 +8,7 @@ import { CardComponent } from './components/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
+import { SubHeaderComponent } from './components/sub-header/sub-header.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MainpageComponent } from './components/mainpage/mainpage.component';
     FooterComponent,
     CardComponent,
     HeaderComponent,
-    MainpageComponent
+    MainpageComponent,
+    SubHeaderComponent
   ],
   imports: [
     BrowserModule,

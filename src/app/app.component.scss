@@ -3,7 +3,11 @@
     flex-direction: column;
 
     app-header {
-        height: 60px; /* définissez la hauteur de votre en-tête selon vos besoins */
+        height: 65px; /* définissez la hauteur de votre en-tête selon vos besoins */
+    }
+
+    app-sub-header{
+        flex: auto;
     }
 
     app-mainpage {
