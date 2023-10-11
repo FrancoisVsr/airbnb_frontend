@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { SubHeaderComponent } from './components/sub-header/sub-header.component';
+import { AnnonceComponent } from './components/annonce/annonce.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SubHeaderComponent } from './components/sub-header/sub-header.component
     CardComponent,
     HeaderComponent,
     MainpageComponent,
-    SubHeaderComponent
+    SubHeaderComponent,
+    AnnonceComponent
   ],
   imports: [
     BrowserModule,

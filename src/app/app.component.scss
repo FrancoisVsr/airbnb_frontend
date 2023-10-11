@@ -3,14 +3,24 @@
     flex-direction: column;
 
     app-header {
-        height: 65px; /* définissez la hauteur de votre en-tête selon vos besoins */
+        position: sticky;
+        top: 0;
+        z-index: 999;
     }
 
     app-sub-header{
-        flex: auto;
+        position: sticky;
+        top: 13vh;
+        z-index: 998;
     }
 
     app-mainpage {
         flex: 1;
+    }
+
+    app-footer {
+        position: sticky;
+        bottom: 0;
+        z-index: 997;
     }
 }
