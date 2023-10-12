@@ -5,10 +5,7 @@
 
   <div class="left">
     <button>
-      <img
-        src="../../../assets/img/logo_airbnb.png"
-        alt="left_icone_rbnb"
-      />
+      <img src="../../../assets/img/logo_airbnb.png" alt="left_icone_rbnb" />
     </button>
   </div>
 
@@ -16,43 +13,37 @@
   <!-- CENTER -->
   <!-- --------------------------------------------- -->
 
-  <!-- <div class="search-box">
-    <input type="text" placeholder="N'importe où" />
-    <input type="text" placeholder="Une semaine" />
-    <div class="last-input">
-      <input type="text" placeholder="Ajouter des voyageurs" />
-      <div class="search-button">
-        <img src="../../../assets/img/search-icone.svg" alt="" />
-      </div>
-    </div>
-  </div> -->
-
   <div class="search-box">
-
     <button class="first-button">
-      <div class="first-texte">
-        N'importe où
-      </div>
+      <input
+        (input)="onInputChange($event)"
+        type="text"
+        class="first-texte"
+        placeholder="N'importe où"
+      />
+      <ul *ngIf="villes$ | async as villes" class="villes-container">
+        <li
+          (click)="onCityClick(ville)"
+          class="ville"
+          *ngFor="let ville of villes"
+        >
+          {{ ville.nom }}
+        </li>
+        <!-- <li (click)="onCdPosClick(ville.cdPostaux)" class="cdPostaux" *ngFor="let cdPostaux of villes">{{ ville.codesPostaux }}</li> -->
+      </ul>
     </button>
 
     <button class="second-button">
-      <div class="second-texte">
-        Une semaine
-      </div>
+      <div class="second-texte">Une semaine</div>
     </button>
 
-
     <button class="third-button">
-      <div class="third-texte">
-        Ajouter des voyageurs
-      </div>
+      <div class="third-texte">Ajouter des voyageurs</div>
     </button>
 
     <div class="search-image">
-      <img src="../../../assets/img/search-icone.svg" alt="">
+      <img src="../../../assets/img/search-icone.svg" alt="" />
     </div>
-
-
   </div>
 
   <!-- --------------------------------------------- -->
