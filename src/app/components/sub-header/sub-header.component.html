@@ -1,11 +1,19 @@
 <div class="sub-header" [class.shadowed]="shouldAddShadow">
-  <div class="image-slider">
+  <div
+    class="scroll-button-left"
+    (click)="scrollImages('left')"
+    #scrollButtonLeft
+  >
+    <img src="../../../assets/img/arrow-gauche.svg" alt="Scroll Left" />
+  </div>
+
+  <div class="image-slider" #carousel (scroll)="handleScroll($event)">
     <div class="image-item">
-        <img
-          src="../../../assets/img/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg"
-          alt="Cabanes"
-        />
-        <div class="image-text">Cabanes</div>
+      <img
+        src="../../../assets/img/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg"
+        alt="Cabanes"
+      />
+      <div class="image-text">Cabanes</div>
     </div>
 
     <div class="image-item">
@@ -17,480 +25,483 @@
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/35919456-df89-4024-ad50-5fcb7a472df9.jpg"
-          alt="Tiny houses"
-        />
-        <div class="image-text">Tiny houses</div>
+      <img
+        src="../../../assets/img/35919456-df89-4024-ad50-5fcb7a472df9.jpg"
+        alt="Tiny houses"
+      />
+      <div class="image-text">Tiny houses</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/1d477273-96d6-4819-9bda-9085f809dad3.jpg"
-          alt="Chalets tipi"
-        />
-        <div class="image-text">Chalets tipi</div>
+      <img
+        src="../../../assets/img/1d477273-96d6-4819-9bda-9085f809dad3.jpg"
+        alt="Chalets tipi"
+      />
+      <div class="image-text">Chalets tipi</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/c0a24c04-ce1f-490c-833f-987613930eca.jpg"
-          alt="Parcs nationaux"
-        />
-        <div class="image-text">Parcs nationaux</div>
+      <img
+        src="../../../assets/img/c0a24c04-ce1f-490c-833f-987613930eca.jpg"
+        alt="Parcs nationaux"
+      />
+      <div class="image-text">Parcs nationaux</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/757deeaa-c78f-488f-992b-d3b1ecc06fc9.jpg"
-          alt="Au pied des pistes"
-        />
-        <div class="image-text">Au pied des pistes</div>
+      <img
+        src="../../../assets/img/757deeaa-c78f-488f-992b-d3b1ecc06fc9.jpg"
+        alt="Au pied des pistes"
+      />
+      <div class="image-text">Au pied des pistes</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/3fb523a0-b622-4368-8142-b5e03df7549b.jpg"
-          alt="Piscines"
-        />
-        <div class="image-text">Piscines</div>
+      <img
+        src="../../../assets/img/3fb523a0-b622-4368-8142-b5e03df7549b.jpg"
+        alt="Piscines"
+      />
+      <div class="image-text">Piscines</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg"
-          alt="Avec vue"
-        />
-        <div class="image-text">Avec vue</div>
+      <img
+        src="../../../assets/img/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg"
+        alt="Avec vue"
+      />
+      <div class="image-text">Avec vue</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/89faf9ae-bbbc-4bc4-aecd-cc15bf36cbca.jpg"
-          alt="Dômes"
-        />
-        <div class="image-text">Dômes</div>
+      <img
+        src="../../../assets/img/89faf9ae-bbbc-4bc4-aecd-cc15bf36cbca.jpg"
+        alt="Dômes"
+      />
+      <div class="image-text">Dômes</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg"
-          alt="Campagne"
-        />
-        <div class="image-text">Campagne</div>
+      <img
+        src="../../../assets/img/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg"
+        alt="Campagne"
+      />
+      <div class="image-text">Campagne</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg"
-          alt="Bord de mer"
-        />
-        <div class="image-text">Bord de mer</div>
+      <img
+        src="../../../assets/img/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg"
+        alt="Bord de mer"
+      />
+      <div class="image-text">Bord de mer</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg"
-          alt="Wow!"
-        />
-        <div class="image-text">Wow!</div>
+      <img
+        src="../../../assets/img/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg"
+        alt="Wow!"
+      />
+      <div class="image-text">Wow!</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/78ba8486-6ba6-4a43-a56d-f556189193da.jpg"
-          alt="Grandes demeures"
-        />
-        <div class="image-text">Grandes demeures</div>
+      <img
+        src="../../../assets/img/78ba8486-6ba6-4a43-a56d-f556189193da.jpg"
+        alt="Grandes demeures"
+      />
+      <div class="image-text">Grandes demeures</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/c027ff1a-b89c-4331-ae04-f8dee1cdc287.jpg"
-          alt="Sur l'eau"
-        />
-        <div class="image-text">Sur l'eau</div>
+      <img
+        src="../../../assets/img/c027ff1a-b89c-4331-ae04-f8dee1cdc287.jpg"
+        alt="Sur l'eau"
+      />
+      <div class="image-text">Sur l'eau</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/c8e2ed05-c666-47b6-99fc-4cb6edcde6b4.jpg"
-          alt="Luxe"
-        />
-        <div class="image-text">Luxe</div>
+      <img
+        src="../../../assets/img/c8e2ed05-c666-47b6-99fc-4cb6edcde6b4.jpg"
+        alt="Luxe"
+      />
+      <div class="image-text">Luxe</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/4221e293-4770-4ea8-a4fa-9972158d4004.jpg"
-          alt="Maisons troglodytes"
-        />
-        <div class="image-text">Maisons troglodytes</div>
+      <img
+        src="../../../assets/img/4221e293-4770-4ea8-a4fa-9972158d4004.jpg"
+        alt="Maisons troglodytes"
+      />
+      <div class="image-text">Maisons troglodytes</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/60ff02ae-d4a2-4d18-a120-0dd274a95925.jpg"
-          alt="Vignobles"
-        />
-        <div class="image-text">Vignobles</div>
+      <img
+        src="../../../assets/img/60ff02ae-d4a2-4d18-a120-0dd274a95925.jpg"
+        alt="Vignobles"
+      />
+      <div class="image-text">Vignobles</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/3726d94b-534a-42b8-bca0-a0304d912260.jpg"
-          alt="Tendance"
-        />
-        <div class="image-text">Tendance</div>
+      <img
+        src="../../../assets/img/3726d94b-534a-42b8-bca0-a0304d912260.jpg"
+        alt="Tendance"
+      />
+      <div class="image-text">Tendance</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg"
-          alt="Fermes"
-        />
-        <div class="image-text">Fermes</div>
+      <img
+        src="../../../assets/img/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg"
+        alt="Fermes"
+      />
+      <div class="image-text">Fermes</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/687a8682-68b3-4f21-8d71-3c3aef6c1110.jpg"
-          alt="Bateaux"
-        />
-        <div class="image-text">Bateaux</div>
+      <img
+        src="../../../assets/img/687a8682-68b3-4f21-8d71-3c3aef6c1110.jpg"
+        alt="Bateaux"
+      />
+      <div class="image-text">Bateaux</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/f0c5ca0f-5aa0-4fe5-b38d-654264bacddf.jpg"
-          alt="Espaces de jeu"
-        />
-        <div class="image-text">Espaces de jeu</div>
+      <img
+        src="../../../assets/img/f0c5ca0f-5aa0-4fe5-b38d-654264bacddf.jpg"
+        alt="Espaces de jeu"
+      />
+      <div class="image-text">Espaces de jeu</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/a4634ca6-1407-4864-ab97-6e141967d782.jpg"
-          alt="Lacs"
-        />
-        <div class="image-text">Lacs</div>
+      <img
+        src="../../../assets/img/a4634ca6-1407-4864-ab97-6e141967d782.jpg"
+        alt="Lacs"
+      />
+      <div class="image-text">Lacs</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg"
-          alt="Bord de lac"
-        />
-        <div class="image-text">Bord de lac</div>
+      <img
+        src="../../../assets/img/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg"
+        alt="Bord de lac"
+      />
+      <div class="image-text">Bord de lac</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/50861fca-582c-4bcc-89d3-857fb7ca6528.jpg"
-          alt="Design"
-        />
-        <div class="image-text">Design</div>
+      <img
+        src="../../../assets/img/50861fca-582c-4bcc-89d3-857fb7ca6528.jpg"
+        alt="Design"
+      />
+      <div class="image-text">Design</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/1b6a8b70-a3b6-48b5-88e1-2243d9172c06.jpg"
-          alt="Châteaux"
-        />
-        <div class="image-text">Châteaux</div>
+      <img
+        src="../../../assets/img/1b6a8b70-a3b6-48b5-88e1-2243d9172c06.jpg"
+        alt="Châteaux"
+      />
+      <div class="image-text">Châteaux</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/9a2ca4df-ee90-4063-b15d-0de7e4ce210a.jpg"
-          alt="Séjours déconnectés"
-        />
-        <div class="image-text">Séjours déconnectés</div>
+      <img
+        src="../../../assets/img/9a2ca4df-ee90-4063-b15d-0de7e4ce210a.jpg"
+        alt="Séjours déconnectés"
+      />
+      <div class="image-text">Séjours déconnectés</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/5cdb8451-8f75-4c5f-a17d-33ee228e3db8.jpg"
-          alt="Moulins à vent"
-        />
-        <div class="image-text">Moulins à vent</div>
+      <img
+        src="../../../assets/img/5cdb8451-8f75-4c5f-a17d-33ee228e3db8.jpg"
+        alt="Moulins à vent"
+      />
+      <div class="image-text">Moulins à vent</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/d7445031-62c4-46d0-91c3-4f29f9790f7a.jpg"
-          alt="Maisons organiques"
-        />
-        <div class="image-text">Maisons organiques</div>
+      <img
+        src="../../../assets/img/d7445031-62c4-46d0-91c3-4f29f9790f7a.jpg"
+        alt="Maisons organiques"
+      />
+      <div class="image-text">Maisons organiques</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/33dd714a-7b4a-4654-aaf0-f58ea887a688.jpg"
-          alt="Patrimoine"
-        />
-        <div class="image-text">Patrimoine</div>
+      <img
+        src="../../../assets/img/33dd714a-7b4a-4654-aaf0-f58ea887a688.jpg"
+        alt="Patrimoine"
+      />
+      <div class="image-text">Patrimoine</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/ca25c7f3-0d1f-432b-9efa-b9f5dc6d8770.jpg"
-          alt="Camping"
-        />
-        <div class="image-text">Camping</div>
+      <img
+        src="../../../assets/img/ca25c7f3-0d1f-432b-9efa-b9f5dc6d8770.jpg"
+        alt="Camping"
+      />
+      <div class="image-text">Camping</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/ee9e2a40-ffac-4db9-9080-b351efc3cfc4.jpg"
-          alt="Sous les tropiques"
-        />
-        <div class="image-text">Sous les tropiques</div>
+      <img
+        src="../../../assets/img/ee9e2a40-ffac-4db9-9080-b351efc3cfc4.jpg"
+        alt="Sous les tropiques"
+      />
+      <div class="image-text">Sous les tropiques</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/c0fa9598-4e37-40f3-b734-4bd0e2377add.jpg"
-          alt="Nouveautés"
-        />
-        <div class="image-text">Nouveautés</div>
+      <img
+        src="../../../assets/img/c0fa9598-4e37-40f3-b734-4bd0e2377add.jpg"
+        alt="Nouveautés"
+      />
+      <div class="image-text">Nouveautés</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/f60700bc-8ab5-424c-912b-6ef17abc479a.jpg"
-          alt="Granges"
-        />
-        <div class="image-text">Granges</div>
+      <img
+        src="../../../assets/img/f60700bc-8ab5-424c-912b-6ef17abc479a.jpg"
+        alt="Granges"
+      />
+      <div class="image-text">Granges</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/8e507f16-4943-4be9-b707-59bd38d56309.jpg"
-          alt="Îles"
-        />
-        <div class="image-text">Îles</div>
+      <img
+        src="../../../assets/img/8e507f16-4943-4be9-b707-59bd38d56309.jpg"
+        alt="Îles"
+      />
+      <div class="image-text">Îles</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg"
-          alt="Chambres"
-        />
-        <div class="image-text">Chambres</div>
+      <img
+        src="../../../assets/img/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg"
+        alt="Chambres"
+      />
+      <div class="image-text">Chambres</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Chambres d'hôtes"
-        />
-        <div class="image-text">Chambres d'hôtes</div>
+      <img
+        src="../../../assets/img/5ed8f7c7-2e1f-43a8-9a39-4edfc81a3325.jpg"
+        alt="Chambres d'hôtes"
+      />
+      <div class="image-text">Chambres d'hôtes</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Villes emblématiques"
-        />
-        <div class="image-text">Villes emblématiques</div>
+      <img
+        src="../../../assets/img/ed8b9e47-609b-44c2-9768-33e6a22eccb2.jpg"
+        alt="Villes emblématiques"
+      />
+      <div class="image-text">Villes emblématiques</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Yourtes"
-        />
-        <div class="image-text">Yourtes</div>
+      <img
+        src="../../../assets/img/4759a0a7-96a8-4dcd-9490-ed785af6df14.jpg"
+        alt="Yourtes"
+      />
+      <div class="image-text">Yourtes</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Art et créativité"
-        />
-        <div class="image-text">Art et créativité</div>
+      <img
+        src="../../../assets/img/8a43b8c6-7eb4-421c-b3a9-1bd9fcb26622.jpg"
+        alt="Art et créativité"
+      />
+      <div class="image-text">Art et créativité</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Surf"
-        />
-        <div class="image-text">Surf</div>
+      <img
+        src="../../../assets/img/957f8022-dfd7-426c-99fd-77ed792f6d7a.jpg"
+        alt="Surf"
+      />
+      <div class="image-text">Surf</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Dammusi"
-        />
-        <div class="image-text">Dammusi</div>
+      <img
+        src="../../../assets/img/c9157d0a-98fe-4516-af81-44022118fbc7.jpg"
+        alt="Dammusi"
+      />
+      <div class="image-text">Dammusi</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Cabanes de berger"
-        />
-        <div class="image-text">Cabanes de berger</div>
+      <img
+        src="../../../assets/img/747b326c-cb8f-41cf-a7f9-809ab646e10c.jpg"
+        alt="Cabanes de berger"
+      />
+      <div class="image-text">Cabanes de berger</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Arctique"
-        />
-        <div class="image-text">Arctique</div>
+      <img
+        src="../../../assets/img/8b44f770-7156-4c7b-b4d3-d92549c8652f.jpg"
+        alt="Arctique"
+      />
+      <div class="image-text">Arctique</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Pianos à queue"
-        />
-        <div class="image-text">Pianos à queue</div>
+      <img
+        src="../../../assets/img/8eccb972-4bd6-43c5-ac83-27822c0d3dcd.jpg"
+        alt="Pianos à queue"
+      />
+      <div class="image-text">Pianos à queue</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Tours"
-        />
-        <div class="image-text">Tours</div>
+      <img
+        src="../../../assets/img/d721318f-4752-417d-b4fa-77da3cbc3269.jpg"
+        alt="Tours"
+      />
+      <div class="image-text">Tours</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Conteneurs maritimes"
-        />
-        <div class="image-text">Conteneurs maritimes</div>
+      <img
+        src="../../../assets/img/0ff9740e-52a2-4cd5-ae5a-94e1bfb560d6.jpg"
+        alt="Conteneurs maritimes"
+      />
+      <div class="image-text">Conteneurs maritimes</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Désert"
-        />
-        <div class="image-text">Désert</div>
+      <img
+        src="../../../assets/img/a6dd2bae-5fd0-4b28-b123-206783b5de1d.jpg"
+        alt="Désert"
+      />
+      <div class="image-text">Désert</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Minsus"
-        />
-        <div class="image-text">Minsus</div>
+      <img
+        src="../../../assets/img/48b55f09-f51c-4ff5-b2c6-7f6bd4d1e049.jpg"
+        alt="Minsus"
+      />
+      <div class="image-text">Minsus</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Ryokans"
-        />
-        <div class="image-text">Ryokans</div>
+      <img
+        src="../../../assets/img/827c5623-d182-474a-823c-db3894490896.jpg"
+        alt="Ryokans"
+      />
+      <div class="image-text">Ryokans</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Riads"
-        />
-        <div class="image-text">Riads</div>
+      <img
+        src="../../../assets/img/7ff6e4a1-51b4-4671-bc9a-6f523f196c61.jpg"
+        alt="Riads"
+      />
+      <div class="image-text">Riads</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Casas particulares"
-        />
-        <div class="image-text">Casas particulares</div>
+      <img
+        src="../../../assets/img/251c0635-cc91-4ef7-bb13-1084d5229446.jpg"
+        alt="Casas particulares"
+      />
+      <div class="image-text">Casas particulares</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Cuisines équipées"
-        />
-        <div class="image-text">Cuisines équipées</div>
+      <img
+        src="../../../assets/img/ddd13204-a5ae-4532-898c-2e595b1bb15f.jpg"
+        alt="Cuisines équipées"
+      />
+      <div class="image-text">Cuisines équipées</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Hanoks"
-        />
-        <div class="image-text">Hanoks</div>
+      <img
+        src="../../../assets/img/51f5cf64-5821-400c-8033-8a10c7787d69.jpg"
+        alt="Hanoks"
+      />
+      <div class="image-text">Hanoks</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Toit du monde"
-        />
-        <div class="image-text">Toit du monde</div>
+      <img
+        src="../../../assets/img/248f85bf-e35e-4dc3-a9a1-e1dbff9a3db4.jpg"
+        alt="Toit du monde"
+      />
+      <div class="image-text">Toit du monde</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Maisons cycladiques"
-        />
-        <div class="image-text">Maisons cycladiques</div>
+      <img
+        src="../../../assets/img/e4b12c1b-409b-4cb6-a674-7c1284449f6e.jpg"
+        alt="Maisons cycladiques"
+      />
+      <div class="image-text">Maisons cycladiques</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Logements adaptés"
-        />
-        <div class="image-text">Logements adaptés</div>
+      <img
+        src="../../../assets/img/e22b0816-f0f3-42a0-a5db-e0f1fa93292b.jpg"
+        alt="Logements adaptés"
+      />
+      <div class="image-text">Logements adaptés</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Caravanes"
-        />
-        <div class="image-text">Caravanes</div>
+      <img
+        src="../../../assets/img/31c1d523-cc46-45b3-957a-da76c30c85f9.jpg"
+        alt="Caravanes"
+      />
+      <div class="image-text">Caravanes</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Golf"
-        />
-        <div class="image-text">Golf</div>
+      <img
+        src="../../../assets/img/6b639c8d-cf9b-41fb-91a0-91af9d7677cc.jpg"
+        alt="Golf"
+      />
+      <div class="image-text">Golf</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Trulli"
-        />
-        <div class="image-text">Trulli</div>
+      <img
+        src="../../../assets/img/33848f9e-8dd6-4777-b905-ed38342bacb9.jpg"
+        alt="Trulli"
+      />
+      <div class="image-text">Trulli</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Plages"
-        />
-        <div class="image-text">Plages</div>
+      <img
+        src="../../../assets/img/10ce1091-c854-40f3-a2fb-defc2995bcaf.jpg"
+        alt="Plages"
+      />
+      <div class="image-text">Plages</div>
     </div>
 
     <div class="image-item">
-        <img
-          src="../../../assets/img"
-          alt="Ski"
-        />
-        <div class="image-text">Ski</div>
+      <img
+        src="../../../assets/img/c8bba3ed-34c0-464a-8e6e-27574d20e4d2.jpg"
+        alt="Ski"
+      />
+      <div class="image-text">Ski</div>
     </div>
   </div>
 
-  <!-- <div class="scroll-button" (click)="scrollImages('right')"> -->
-  <div class="scroll-button">
+  <div
+    class="scroll-button-right"
+    (click)="scrollImages('right')"
+    #scrollButtonRight
+  >
     <img src="../../../assets/img/arrow-droite.svg" alt="Scroll Right" />
   </div>
 
