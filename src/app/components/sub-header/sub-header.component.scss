@@ -5,29 +5,34 @@
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  margin-left: 10px;
-
 
   .image-slider {
     display: flex;
-    width: 100%;
+    width: 80%;
     height: auto;
-    
+    margin-left: 7vh;
+    cursor: pointer;
+    overflow: hidden;
+    align-items: flex-end;
+
     .image-item {
       text-align: center;
       margin-right: 20px; /* Espace entre chaque image */
-    
+
       img {
-        width: 10px;
+        width: 22px;
         height: auto; /* Garde le ratio hauteur/largeur */
+        filter: invert(30%);
       }
-    
+
       .image-text {
-        margin-top: 5px; /* Espace entre l'image et le texte */
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 0.3vh; /* Espace entre l'image et le texte */
+        white-space: nowrap;
+        color: darkslategray;
       }
     }
   }
-
 
   .scroll-button {
     cursor: pointer;
@@ -52,28 +57,33 @@
     }
   }
 
-  .button-with-text button {
-    font-family: "Circular", sans-serif, monospace;
-    font-size: 10px;
-    font-weight: bold;
-    display: flex;
-    width: 20%;
-    height: 50%;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    border-radius: 10px;
-    background-color: white;
-    padding: 10px 30px;
-    //margin: 70%;
-  }
+  .button-with-text {
+    margin-right: 8vh;
+    width: 5%;
 
-  .button-with-text img {
-    //margin-right: 5px; /* Espace entre l'image et le texte */
-    width: 45%;
-    height: 100%;
-    padding: 0px 0px;
+    button {
+      font-family: "Circular", sans-serif, monospace;
+      font-size: 10px;
+      font-weight: bold;
+      display: flex;
+      width: 20%;
+      height: 50%;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      border-radius: 10px;
+      background-color: white;
+      padding: 10px 30px;
+      //margin: 70%;
+    }
+
+    img {
+      //margin-right: 5px; /* Espace entre l'image et le texte */
+      width: 45%;
+      height: 100%;
+      padding: 0px 0px;
+    }
   }
 }
 
