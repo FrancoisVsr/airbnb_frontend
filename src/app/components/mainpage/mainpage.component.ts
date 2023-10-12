@@ -15,30 +15,55 @@ export class MainpageComponent implements OnInit {
 
   accomodations: Array<Logement>;
 
-  @Input() citySelected$ : Observable<string> = of("");
-  
-  constructor(
-    private accommodationService: AccommodationsFetchService,
-  ) {}
+  @Input() citySelected$: Observable<string> = of('');
 
+  constructor(private accommodationService: AccommodationsFetchService) {}
 
   ngOnInit(): void {
     this.citySelected$.subscribe((selectedCity) => {
-      console.log("from mainpage: ", selectedCity)
+      console.log('from mainpage: ', selectedCity);
       this.accommodationService
         .getAccommodations()
         .subscribe((accomodations) => {
-          console.log("selectedCity")
-          if (selectedCity !== "") {
-            console.log("if")
+          console.log('selectedCity');
+          if (selectedCity !== '') {
+            console.log('if');
             this.accomodations = accomodations.filter((accomodation) => {
-              return accomodation.city_name == selectedCity
+              return accomodation.city_name == selectedCity;
             });
           } else {
-            console.log('else')
+            console.log('else');
             this.accomodations = accomodations;
           }
         });
     });
+  }
+
+  onFavoriteChanged({
+    logementId,
+    isFavorite,
+  }: {
+    logementId: number;
+    isFavorite: boolean;
+  }) {
+    this.accommodationService
+      .updateAccommodationFavorite(logementId, isFavorite)
+      .subscribe(
+        (response) => {
+          // mise à jour localement de l'état favorite dans la liste des hébergements
+          const accommodationToUpdate = this.accomodations.find(
+            (accommodation) => accommodation.id === logementId
+          );
+          if (accommodationToUpdate) {
+            accommodationToUpdate.favourite = isFavorite;
+          }
+        },
+        (error) => {
+          console.error(
+            "Erreur lors de la mise à jour de l'état favorite :",
+            error
+          );
+        }
+      );
   }
 }

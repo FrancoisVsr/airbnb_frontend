@@ -3,6 +3,7 @@
         <app-card class="card"
         [logement]="logement"
         *ngFor="let logement of accomodations"
+        (favoriteChanged)="onFavoriteChanged($event)"
         >
         </app-card>
     </div>

@@ -29,7 +29,9 @@ export class HeaderComponent {
     this.selectedCity = city.nom;
   }
 
-
+  reloadOriginalPage() {
+    window.location.reload();
+  }
 
   // public onCdPosClick(search: any){
 

@@ -2,7 +2,7 @@
     <div class="image">
         <img class="front-image" [src]="'data:image/jpeg;base64,' + logement.image" alt="Accommodation Image">
         <!-- <img class="favourite" src="../../../assets/img/favourite-true.svg" alt=""> -->
-        <svg class="favourite" xmlns="http://www.w3.org/2000/svg" 
+        <svg class="favourite" (click)="toggleFavorite($event)" xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 32 32" aria-hidden="true" 
             role="presentation" focusable="false" 
             style="display: block; height: 25px; width: 25px; stroke-width: 2; overflow: visible; opacity: 1;"

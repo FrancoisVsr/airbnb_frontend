@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Logement } from '../models/Logement';
 import { City } from '../models/City';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,12 @@ export class AccommodationsFetchService {
 
     getAccommodations() {
         return this.http.get<Array<Logement>>(`${this.apiBaseUrl}`);
+    }
+
+    updateAccommodationFavorite(id: number, isFavorite: boolean): Observable<any> {
+      const url = `${this.apiBaseUrl}/${id}`;
+      const body = { favourite: isFavorite };
+      return this.http.put(url, body);
     }
 
     getCities(ville: string){
