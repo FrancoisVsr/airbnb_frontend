@@ -18,18 +18,18 @@
       <input
         (input)="onInputChange($event)"
         type="text"
+        [value]="selectedCity ? selectedCity : null"
         class="first-texte"
         placeholder="N'importe où"
       />
       <ul *ngIf="villes$ | async as villes" class="villes-container">
         <li
-          (click)="onCityClick(ville)"
+          (click)="onCityClick(ville)" 
           class="ville"
           *ngFor="let ville of villes"
         >
           {{ ville.nom }}
         </li>
-        <!-- <li (click)="onCdPosClick(ville.cdPostaux)" class="cdPostaux" *ngFor="let cdPostaux of villes">{{ ville.codesPostaux }}</li> -->
       </ul>
     </button>
 
