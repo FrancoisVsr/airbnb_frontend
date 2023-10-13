@@ -2,8 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AccommodationsFetchService } from '../../services/accommodations-fetch.service';
 import { Logement } from '../../models/Logement';
 import { Observable, of } from 'rxjs';
-import { City } from 'src/app/models/City';
-import { CommunicationService } from 'src/app/services/communication/communication.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-mainpage',
@@ -12,24 +11,26 @@ import { CommunicationService } from 'src/app/services/communication/communicati
 })
 export class MainpageComponent implements OnInit {
   accommodations$: Observable<Array<Logement>>;
-
+  topValue = '13vh';
   accomodations: Array<Logement>;
 
-  @Input() citySelected$: Observable<string> = of('');
-
-  constructor(private accommodationService: AccommodationsFetchService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private accommodationService: AccommodationsFetchService
+  ) {}
 
   ngOnInit(): void {
-    this.citySelected$.subscribe((selectedCity) => {
-      console.log('from mainpage: ', selectedCity);
+    this.route.queryParams.subscribe((selectedCity) => {
+      console.log('params :', selectedCity['city']);
+      const cityParam = selectedCity['city'];
       this.accommodationService
         .getAccommodations()
         .subscribe((accomodations) => {
           console.log('selectedCity');
-          if (selectedCity !== '') {
+          if (cityParam) {
             console.log('if');
             this.accomodations = accomodations.filter((accomodation) => {
-              return accomodation.city_name == selectedCity;
+              return accomodation.city_name == cityParam;
             });
           } else {
             console.log('else');
