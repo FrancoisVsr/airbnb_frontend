@@ -14,19 +14,30 @@ export class HeaderComponent {
 
   villes$: Observable<Array<City>>;
   @Output() searchCity : EventEmitter<string> = new EventEmitter(); 
-  selectedCity: string;
+  selectedCity : string;
+  showCity : boolean;
 
   constructor(private service: AccommodationsFetchService, private communicationService: CommunicationService) { } // Injectez le Router
   
-  /*TODO : ecouter mon input et faire une recherche dans mon API */
+ 
   public onInputChange(search:any) : void {
+    // Si on veut filtrer en meme temps qu'on cherche une ville
     //this.searchCity.emit(search.target.value);
+
+    // Affichage des villes 
+    if (search.target.value !== '') {
+      this.showCity = true;
+    }
     this.villes$ = this.service.getCities(search.target.value);
   }
 
   public onCityClick(city:City) {
+
+    // Permet de filtrer lors du clique
     this.searchCity.emit(city.nom);
     this.selectedCity = city.nom;
+    // Ferme la liste des villes 
+    this.showCity = false;
   }
 
   reloadOriginalPage() {

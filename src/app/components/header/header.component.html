@@ -22,15 +22,18 @@
         class="first-texte"
         placeholder="N'importe où"
       />
-      <ul *ngIf="villes$ | async as villes" class="villes-container">
-        <li
-          (click)="onCityClick(ville)" 
-          class="ville"
-          *ngFor="let ville of villes"
-        >
-          {{ ville.nom }}
-        </li>
-      </ul>
+
+      <ng-container *ngIf="showCity">
+        <ul *ngIf="villes$ | async as villes" class="villes-container">
+          <li
+            (click)="onCityClick(ville)"
+            class="ville"
+            *ngFor="let ville of villes"
+          >
+            {{ ville.nom }}
+          </li>
+        </ul>
+      </ng-container>
     </button>
 
     <button class="second-button">
