@@ -1,238 +1,231 @@
-.header{
-    width: 100%;
-    height: 13vh;
-    max-height: 80px;
+.header {
+  width: 100%;
+  height: 80px;
+  max-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.01rem solid lightgray;
+  background-color: white;
+
+  .left {
+    height: 100%;
     display: flex;
-    justify-content: space-between;
+    width: 30%;
     align-items: center;
-    border-bottom: 0.01rem solid lightgray;
-    background-color: white;
-
-    
-    .left {
-        height: 100%;
-        display: flex;
-        width: 30%;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 1rem;
+    justify-content: flex-start;
+    gap: 1rem;
+    img {
+      height: 40%;
+      margin: 10%;
     }
-  
-    .left button {
-        cursor: pointer;
-        padding: 0;
-        margin: 0;
+    button {
+      cursor: pointer;
+      border: none;
+      background: none; /* Pas de fond */
+      height: 100%;
+      margin: 9%;
+    }
+  }
+
+  // *************************************************//
+
+  .search-box {
+    display: flex;
+    width: 37%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    height: 40px;
+
+    .first-button {
+      border: transparent;
+      cursor: pointer;
+      width: 25%;
+      height: 100%;
+      background-color: white;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+
+      .villes-container {
+        position: absolute;
+        background-color: white;
+        max-height: 100px;
+        overflow-y: auto;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      .ville {
+        font-family: "airbnbcereal_w_bkregular";
+        color: black;
+        height: 50%;
+        width: 50%;
+      }
+
+      .cdPostaux {
+        font-family: "airbnbcereal_w_bkregular";
+        color: #ff385c;
+        height: 100%;
+        width: 100%;
+      }
+
+      .first-texte {
         border: none;
-        background: none; /* Pas de fond */
-        height: 100%;
-        margin: 9%;
-    }
-  
-    .left button img {
-        height: 40%;
-        margin: 10%;
-        //filter: grayscale(100%) saturate(0%) hue-rotate(300deg);
-    }
-
-
-    // *************************************************//
-  
-    .search-box{
-        display: flex;
-        width: 37%;
+        font-family: "airbnbcereal_w_bkregular";
+        font-weight: bold;
+        font-size: 13px;
+        height: auto;
+        width: auto;
         justify-content: center;
         align-items: center;
-        border-radius: 25px;
-        border: 1px solid #ccc;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        height: 40px;
-      
-        .first-button{
-            border: transparent;
-            cursor: pointer;
-            width: 25%;
-            height: 100%;
-            background-color: white;
-            border-top-left-radius: 25px;
-            border-bottom-left-radius: 25px;
-            
+      }
 
-            .villes-container{
-              position: absolute;
-              background-color: white;
-              max-height: 100px;
-              overflow-y: auto;
-              border-bottom-left-radius: 25px;
-              border-bottom-right-radius: 25px;
-              box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-            }
-            
-            .ville{
-              font-family: 'Circular', sans-serif, monospace;
-              color: black;
-              height: 50%;
-              width: 50%;
-            }
-
-            .cdPostaux{
-                font-family: 'Circular', sans-serif, monospace;
-                color: #FF385C;
-                height: 100%;
-                width: 100%;
-            }
-            
-            .first-texte {
-              border: none;
-              font-family:'Circular', sans-serif, monospace;
-              font-weight: bold;
-              font-size: 11px;
-              height: auto;
-              width: auto;
-              justify-content: center;
-              align-items: center;
-              
-            }
-
-            .first-texte::placeholder{
-              color: black;
-              width: 58%;
-              border-right: 1px solid #ccc;
-            }
-        }
-
-
-        .second-button{
-            border: transparent;
-            cursor: pointer;
-            width: 25%;
-            height: 100%;
-            background-color: white;
-
-            .second-texte{
-                font-family:'Circular', sans-serif, monospace;
-                font-weight: bold;
-                font-size: 11px;
-                color: black;
-          
-                width: 100%;
-                height: auto;
-                justify-content: center;
-                align-items: center;
-                border-right: 1px solid #ccc;
-            }
-        }
-
-        .third-button{
-            border: transparent;
-            cursor: pointer;
-            width: 34%;
-            height: 100%;
-            background-color: white;
-            border-top-right-radius: 25px;
-            border-bottom-right-radius: 25px;
-
-            .third-texte{
-                font-family:'Circular', sans-serif, monospace;
-                font-weight: lighter;
-                font-size: 11px;
-                color: gray;
-                display: flex;
-                height: auto;
-                width: auto;   
-          
-                justify-content: center;
-                align-items: center;
-            }
-        }
-
-        .search-image{
-            width:7%;
-            height: 62%;
-            border-radius: 100%;
-            background-color: #FF385C;
-
-            img{
-                justify-content: flex-end;
-                padding-left: 8px;
-                padding-top: 7px;
-                width: 10px;
-                height: 10px;
-                filter: invert(100%);
-            }
-        }
+      .first-texte::placeholder {
+        color: rgb(50, 50, 50);
+        width: 58%;
+        // border-right: 1px solid #ccc;
+      }
     }
 
+    .second-button {
+      border: transparent;
+      cursor: pointer;
+      width: 25%;
+      height: 100%;
+      background-color: white;
 
-  // *************************************************//  
+      .second-texte {
+        font-family: "Circular", sans-serif, monospace;
+        font-weight: bold;
+        font-size: 11px;
+        color: black;
 
-    .right{
-        display: flex;
-        width: 33%;
-        justify-content: space-evenly;
+        width: 100%;
+        height: auto;
+        justify-content: center;
         align-items: center;
-        //background-color: red;
+        border-right: 1px solid #ccc;
+      }
     }
 
-    .text_button {
-        /* Styles pour le premier bouton avec du texte */
-        background-color: transparent;
-        color: black; /* Couleur du texte */
-        font-size: 11px; /* Taille de la police */
-        font-weight: 550;
-        border-radius: 25px;
-        //border: none;
-        border-color: transparent;
-        cursor: pointer;
-        transition: border-color 0.3s ease;
-    }
+    .third-button {
+      border: transparent;
+      cursor: pointer;
+      width: 34%;
+      height: 100%;
+      background-color: white;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
 
-    .text_button:hover{
-        border: 5px solid #f3f2f2; /* Bordure gris clair au survol */
-        background-color: #f3f2f2;
-    }
-
-    .language_button{
+      .third-texte {
+        font-family: "Circular", sans-serif, monospace;
+        font-weight: lighter;
+        font-size: 11px;
+        color: gray;
         display: flex;
-        height: 15px;
-        width: 15px;
-        cursor: pointer;
-        background-color: transparent;
-        //border-color: transparent;
-        border-radius: 25px;
-        transition: border-color 0.3s ease;
+        height: auto;
+        width: auto;
 
-        /* Ajustez la taille de l'image selon vos besoins */
-        img {
-            height: 100%;
-            width: 100%;
-        }
-    }
-
-    .language_button:hover{
-        border: 10px solid #f3f2f2; /* Bordure gris clair au survol */  
-        background-color: #f3f2f2;
-    }
-
-    .profil_button {
-        //box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Ajouter une ombre */
-        cursor: pointer;
-        display: flex;
+        justify-content: center;
         align-items: center;
+      }
+
+      .vertical-barre {
         border: 1px solid #ccc;
-        border-radius: 20px;
-        flex-direction: row;
-        height: 20px;
-        padding: 5px;
-        transition: border-color 0.3s ease; /* Transition pour l'effet hover */
-        img {
-            height: 90%;
-            margin: 4px;
-        }
+      }
     }
 
-    .profil_button:hover{
-        //border: 2px solid #ccc; /* Bordure gris clair au survol */
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Ajouter une ombre */
+    .search-image {
+      width: 7%;
+      height: 62%;
+      border-radius: 100%;
+      background-color: #ff385c;
+
+      img {
+        justify-content: flex-end;
+        padding-left: 8px;
+        padding-top: 7px;
+        width: 10px;
+        height: 10px;
+        filter: invert(100%);
+      }
     }
+  }
+
+  // *************************************************//
+
+  .right {
+    display: flex;
+    width: 33%;
+    justify-content: space-evenly;
+    align-items: center;
+    //background-color: red;
+  }
+
+  .text_button {
+    /* Styles pour le premier bouton avec du texte */
+    background-color: transparent;
+    color: black; /* Couleur du texte */
+    font-size: 11px; /* Taille de la police */
+    font-weight: 550;
+    border-radius: 25px;
+    //border: none;
+    border-color: transparent;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+
+  .text_button:hover {
+    border: 5px solid #f3f2f2; /* Bordure gris clair au survol */
+    background-color: #f3f2f2;
+  }
+
+  .language_button {
+    display: flex;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    background-color: transparent;
+    //border-color: transparent;
+    border-radius: 25px;
+    transition: border-color 0.3s ease;
+
+    /* Ajustez la taille de l'image selon vos besoins */
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .language_button:hover {
+    border: 10px solid #f3f2f2; /* Bordure gris clair au survol */
+    background-color: #f3f2f2;
+  }
+
+  .profil_button {
+    //box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Ajouter une ombre */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    flex-direction: row;
+    height: 20px;
+    padding: 5px;
+    transition: border-color 0.3s ease; /* Transition pour l'effet hover */
+    img {
+      height: 90%;
+      margin: 4px;
+    }
+  }
+
+  .profil_button:hover {
+    //border: 2px solid #ccc; /* Bordure gris clair au survol */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Ajouter une ombre */
+  }
 } //header
