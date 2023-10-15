@@ -1,6 +1,9 @@
+<!-- Affichage de la page principale  -->
 <div class="page">
-    <app-header (searchCity)="onSearchEmit($event)"></app-header>
-    <!-- <app-sub-header [style.top]="topValue"></app-sub-header> -->
+    <!-- Ecoute la recherche émise sur la div header et l'envoie dans search$ pour gérer ça dans la mainpage -->
+    <!-- Le ngIf était un test pour un affichage -->
+    <app-header *ngIf="showHeader" (searchCity)="onSearchEmit($event)"></app-header> 
+    <app-sub-header [style.top]="topValue"></app-sub-header>
     <!-- <app-mainpage [citySelected$]="search$"></app-mainpage> -->
     <router-outlet></router-outlet>
     <app-footer></app-footer>

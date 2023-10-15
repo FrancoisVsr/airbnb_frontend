@@ -4,6 +4,11 @@ import { AnnonceComponent } from './components/annonce/annonce.component';
 import { CardComponent } from './components/card/card.component';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 
+/**
+ * Définition des itinéraires de navigation de l'application. 
+ * Lorsque l'URL correspond à l'un des chemins spécifiés, Angular charge
+ * le composant correspondant. Si l'URL est vide, il redirige vers la page d'accueil.
+ */
 const routes: Routes = [
     { path: 'annonce', component: AnnonceComponent },
 

@@ -12,6 +12,7 @@ interface AnnonceData{
 })
 export class AnnonceComponent implements OnInit {
   annonceData: AnnonceData | undefined;  // Définissez une interface ou un modèle pour les données d'annonce
+  showHeader = false; // Test pour cacher le header de la page d'annnonce 
 
   ngOnInit(): void {
     // Récupérer les données de l'annonce passées depuis la fenêtre parente

@@ -20,50 +20,63 @@ export class SubHeaderComponent {
 
   constructor() {}
 
-  ngAfterViewInit() {
-    const scrollButtonLeft = this.scrollButtonLeft.nativeElement as HTMLElement;
-    scrollButtonLeft.style.display = 'none';
-  }
+// Méthode appelée après que la vue a été initialisée
+ngAfterViewInit() {
+  // Récupère l'élément DOM du bouton de défilement vers la gauche
+  const scrollButtonLeft = this.scrollButtonLeft.nativeElement as HTMLElement;
+  // Cache le bouton de défilement vers la gauche
+  scrollButtonLeft.style.display = 'none';
+}
 
-  scrollImages(direction: string) {
-    const scrollAmount = 600;
-    const currentScrollLeft = this.carousel.nativeElement.scrollLeft;
-    const targetScrollLeft =
-      direction === 'right'
-        ? currentScrollLeft + scrollAmount
-        : currentScrollLeft - scrollAmount;
+// Méthode pour déplacer les images dans le carrousel
+scrollImages(direction: string) {
+  const scrollAmount = 600; // Quantité de défilement en pixels
+  const currentScrollLeft = this.carousel.nativeElement.scrollLeft;
+  const targetScrollLeft =
+    direction === 'right'
+      ? currentScrollLeft + scrollAmount
+      : currentScrollLeft - scrollAmount;
 
-    this.animateScroll(currentScrollLeft, targetScrollLeft);
-  }
+  // Lance l'animation de défilement
+  this.animateScroll(currentScrollLeft, targetScrollLeft);
+}
 
-  animateScroll(startScrollLeft: number, targetScrollLeft: number) {
-    const duration = 500; // Durée de l'animation en millisecondes
-    const startTime = performance.now();
+// Méthode pour animer le défilement
+animateScroll(startScrollLeft: number, targetScrollLeft: number) {
+  const duration = 500; // Durée de l'animation en millisecondes
+  const startTime = performance.now(); // Temps de début de l'animation
 
-    const animate = (currentTime: number) => {
-      const elapsedTime = currentTime - startTime;
+  const animate = (currentTime: number) => {
+    const elapsedTime = currentTime - startTime;
 
-      if (elapsedTime < duration) {
-        const scrollProgress = this.easeOutQuad(
-          elapsedTime,
-          startScrollLeft,
-          targetScrollLeft - startScrollLeft,
-          duration
-        );
-        this.carousel.nativeElement.scrollLeft = scrollProgress;
-        requestAnimationFrame(animate);
-      } else {
-        this.carousel.nativeElement.scrollLeft = targetScrollLeft;
-      }
-    };
+    if (elapsedTime < duration) {
+      // Calcule la progression du défilement en fonction du temps écoulé
+      const scrollProgress = this.easeOutQuad(
+        elapsedTime,
+        startScrollLeft,
+        targetScrollLeft - startScrollLeft,
+        duration
+      );
+      // Applique la progression du défilement au carrousel
+      this.carousel.nativeElement.scrollLeft = scrollProgress;
+      // Programme la prochaine animation
+      requestAnimationFrame(animate);
+    } else {
+      // Assure que le défilement atteint la position cible
+      this.carousel.nativeElement.scrollLeft = targetScrollLeft;
+    }
+  };
 
-    requestAnimationFrame(animate);
-  }
+  // Lance la première animation
+  requestAnimationFrame(animate);
+}
 
-  easeOutQuad(t: number, b: number, c: number, d: number) {
-    t /= d;
-    return -c * t * (t - 2) + b;
-  }
+// Fonction pour l'interpolation de l'accélération quadratique
+easeOutQuad(t: number, b: number, c: number, d: number): number {
+  t /= d;
+  return -c * t * (t - 2) + b;
+}
+
 
   @HostListener('window:scroll', [])
   onWindowScroll(): void {

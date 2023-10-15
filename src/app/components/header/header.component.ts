@@ -1,9 +1,8 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { City } from 'src/app/models/City';
 import { AccommodationsFetchService } from 'src/app/services/accommodations-fetch.service';
-import { CommunicationService } from 'src/app/services/communication/communication.service';
 
 @Component({
   selector: 'app-header',
@@ -18,22 +17,21 @@ export class HeaderComponent {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private service: AccommodationsFetchService,
-    private communicationService: CommunicationService
-  ) {} // Injectez le Router
+  ) {} 
 
   public onInputChange(search: any): void {
     // Si on veut filtrer en meme temps qu'on cherche une ville
     //this.searchCity.emit(search.target.value);
 
-    // Affichage des villes
+    // Affichage des villes lors de la recherche de celle-ci
     if (search.target.value !== '') {
       this.showCity = true;
     }
     this.villes$ = this.service.getCities(search.target.value);
   }
 
+  // Permet de choisir la ville que l'on voit pour son logement
   public onCityClick(city: City) {
     this.router.navigate(['accueil'], {
       queryParams: {
@@ -44,14 +42,14 @@ export class HeaderComponent {
     // this.searchCity.emit(city.nom);
     // this.selectedCity = city.nom;
     // Ferme la liste des villes
+    // Une fois la ville cliquée on ferme le menu déroulant
     this.showCity = false;
   }
 
+  /**
+   * Permet lors du clique de revenir à l'accueil
+   */
   reloadOriginalPage() {
     this.router.navigate(['/'])
   }
-
-  // public onCdPosClick(search: any){
-
-  // }
 }

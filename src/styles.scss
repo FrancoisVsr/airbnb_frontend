@@ -8,11 +8,13 @@ p {
     font-size: 15px;
 }
 
+/* Pour les tiret dans search-box*/
 span {
     font-family: 'Roboto';
     font-size: 15px;
 }
 
+/* Font trouvée sur internet https://font.gooova.com/fonts/14202/airbnb-cereal-font.html */
 @font-face {
     font-family: 'airbnbcereal_w_bdbold';
     src: url('./assets/fonts/airbnbcereal_w_bd-webfont.woff2') format('woff2'),

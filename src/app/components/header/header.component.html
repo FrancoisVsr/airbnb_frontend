@@ -4,6 +4,7 @@
   <!-- --------------------------------------------- -->
 
   <div class="left">
+    <!-- Permet lors du clique sur l'icone de airbnb de revenir à la page d'accueil -->
     <button (click)="reloadOriginalPage()">
       <img src="../../../assets/img/logo_airbnb.png" alt="left_icone_rbnb" />
     </button>
@@ -15,6 +16,7 @@
 
   <div class="search-box">
     <button class="first-button">
+      <!-- Si je n écris pas dans le premier bouton j affiche mon placeholder, sinon j affiche ce que j écris -->
       <input
         (input)="onInputChange($event)"
         type="text"
@@ -22,8 +24,11 @@
         class="first-texte"
         placeholder="N'importe où"
       />
-
-      <ng-container *ngIf="showCity">
+      
+    <!-- Container qui permet l'affichage des villes en dessous de 
+    de first-button, et permet lors d'un clique sur une ville 
+    d'afficher sur la mainpage seulement les villes concernée par la recherhe   -->
+    <ng-container *ngIf="showCity">
         <ul *ngIf="villes$ | async as villes" class="villes-container">
           <li
             (click)="onCityClick(ville)"
@@ -54,9 +59,10 @@
   </div>
 
   <!-- --------------------------------------------- -->
-  <!-- RIGHT -->
+  <!-- RIGHT --> 
   <!-- --------------------------------------------- -->
 
+  <!-- div qui permet d'afficher les 3 éléments à droite du header rien de particulier -->
   <div class="right">
     <button class="text_button">Mettre mon logement sur Airbnb</button>
 

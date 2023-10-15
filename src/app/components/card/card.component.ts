@@ -16,40 +16,28 @@ export class CardComponent {
 
   ngOnInit(): void {}
 
+  /**
+   * Permet l'ouverture d'une nouvelle fenêtre lors de l'appuie sur une annnonce (card)
+   */
   openWindow() {
-    //this.router.navigate(['annonce'])
+    // Création de l'URL pour la nouvelle fenêtre
     const url = `${window.location.origin}/annonce`;
+  
+    // Ouvrir une nouvelle fenêtre (ou onglet) avec l'URL spécifiée
     const newWindow: Window | null = window.open(url, '_blank');
   
+    // Vérifier si la fenêtre a été s'ouvre
     if (newWindow) {
-      const faviconLink = document.createElement('link');
-      faviconLink.setAttribute('rel', 'icon');
-      faviconLink.setAttribute('type', 'image/x-icon');
-      faviconLink.setAttribute('href', '../../../favicon.ico');
-      newWindow.document.head.appendChild(faviconLink);
-    } else {
+      const faviconLink = document.createElement('link'); // Création d'un lien pour l'icône de la nouvelle fenêtre
+      faviconLink.setAttribute('rel', 'icon'); // Définir le type de lien
+      faviconLink.setAttribute('type', 'image/x-icon'); // Spécifier le type du fichier de l'icône (favicon)
+      faviconLink.setAttribute('href', '../../../favicon.ico'); // Chemin vers l'icône favicon
+      newWindow.document.head.appendChild(faviconLink); // Ajout du lien de l'icône dans l'en-tête de la nouvelle fenêtre
+    } else { // Sinon debug console
       console.error("La fenêtre n'a pas pu s'ouvrir");
     }
-    // console.log('new window')
-    // 
-    // const newWindow: Window | null = window.open(`${url}`, '_blank');
-
-    // if (newWindow) {
-    //   const faviconLink = document.createElement('link');
-    //   faviconLink.setAttribute('rel', 'icon');
-    //   faviconLink.setAttribute('type', 'image/x-icon');
-    //   faviconLink.setAttribute('href', '../../../favicon.ico');
-    //   newWindow.document.head.appendChild(faviconLink);
-      
-    // // Passer les informations de l'annonce à la nouvelle fenêtre
-    // const annonceData = { /* Vos données d'annonce ici */ };
-    // (newWindow as any).annonceData = annonceData;
-
-    // } else {
-    //   console.error("La fenêtre n'a pas pu être ouverte.");
-    // }
-
   }
+  
 
   toggleFavorite(event: Event) {
     event.stopPropagation();

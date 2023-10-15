@@ -20,20 +20,23 @@ export class MainpageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Souscrit aux changements des paramètres de l'URL
     this.route.queryParams.subscribe((selectedCity) => {
-      console.log('params :', selectedCity['city']);
-      const cityParam = selectedCity['city'];
-      this.accommodationService
+      // DEBUG can be deleted
+      // console.log('params :', selectedCity['city']);
+      
+      // CODE 
+      const cityParam = selectedCity['city']; // Récupère la valeur du paramètre "city"
+      this.accommodationService // Appelle le service pour obtenir les hébergements
         .getAccommodations()
         .subscribe((accomodations) => {
-          console.log('selectedCity');
-          if (cityParam) {
-            console.log('if');
-            this.accomodations = accomodations.filter((accomodation) => {
+          // Ville sélectionnée ?
+          if (cityParam) { // Si oui
+            // Filtre les hébergements en fonction de ce qui est sélectionné 
+            this.accomodations = accomodations.filter((accomodation) => { 
               return accomodation.city_name == cityParam;
             });
-          } else {
-            console.log('else');
+          } else { // Sinon affiche tous les hébergements disponible
             this.accomodations = accomodations;
           }
         });
